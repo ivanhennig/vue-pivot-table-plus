@@ -261,6 +261,9 @@ export default {
     onPivotTableCopied () {
       this.showCopiedAlert = true
       setTimeout(() => { this.showCopiedAlert = false }, 700)
+    },
+    refresh () {
+      this.$refs.pivottable.refresh()
     }
   }
 }

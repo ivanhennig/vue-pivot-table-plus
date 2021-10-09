@@ -318,19 +318,20 @@ export default {
     },
     saveTableWithText (format) {
       downloadTableWith(format, this.cols, this.colFields, this.rows, this.rowFields, this.rowHeaderSize, this.values, this.filename)
-    }
-  },
-  watch: {
-    calculationTriggers: function () {
+    },
+    refresh () {
       this.rows = this.calculateRows()
       this.cols = this.calculateCols()
       this.computeValues()
     }
   },
+  watch: {
+    calculationTriggers: function () {
+      this.refresh()
+    }
+  },
   created: function () {
-    this.rows = this.calculateRows()
-    this.cols = this.calculateCols()
-    this.computeValues()
+    this.refresh()
   }
 }
 </script>
