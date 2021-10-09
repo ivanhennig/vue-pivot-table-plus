@@ -4,7 +4,11 @@
 
     <h2 class="border-bottom pb-2 mb-4">Pivot <small>(drag & drop UI + PivotTable)</small></h2>
 
-    <button class="mb-5" @click="() => defaultShowSettings = !defaultShowSettings">Toggle Settings</button>
+    <div class="mb-5">
+      <button class="m-1" @click="() => defaultShowSettings = !defaultShowSettings">Toggle Settings</button>
+      <button class="m-1" @click="refresh()">Refresh</button>
+      <button class="m-1" @click="clear()">Clear Data</button>
+    </div>
 
     <div class="mb-5">
       <pivot
@@ -78,6 +82,18 @@ export default {
     }
   },
   methods: {
+    clear () {
+      this.data = []
+      this.$nextTick(() => {
+        this.$refs.pivot_table.refresh()
+      })
+    },
+    refresh () {
+      this.data = data
+      this.$nextTick(() => {
+        this.$refs.pivot_table.refresh()
+      })
+    },
     downloadTable (format) {
       this.$refs.pivot_table.downloadPivotTableData(format)
     }
