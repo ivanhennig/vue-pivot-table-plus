@@ -129,6 +129,12 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      rows: [],
+      cols: []
+    }
+  },
   computed: {
     // Watched target properties for re-calculation
     calculationTriggers: function () {
