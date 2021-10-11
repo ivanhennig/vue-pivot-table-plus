@@ -41,6 +41,7 @@
     "vue-template-compiler": "^2.6.12"
   },
   "files": [
+    "index.js",
     "src/*.js",
     "src/*.vue"
   ]
