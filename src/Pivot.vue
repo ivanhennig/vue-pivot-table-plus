@@ -59,6 +59,7 @@
           :reducer="reducer"
           :no-data-warning-text="noDataWarningText"
           :filename="filename"
+          :cells-text="cellsText"
           :is-data-loading="isDataLoading"
           :style="{ height: tableHeight + 'px'}"
         >
@@ -158,6 +159,10 @@ export default {
     tableHeight: {
       type: Number,
       default: 300
+    },
+    cellsText: {
+      type: String,
+      default: 'cells'
     }
   },
   data: function () {
